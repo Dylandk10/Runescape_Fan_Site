@@ -1,0 +1,23 @@
+General Requirements
+------------------------------------
+Landing page (home page)
+login page
+player comparison page
+    -search a single player
+    -search two players and compare
+    -high light stats that are better
+Item page- users should be able to search in game items
+Favorite player page - players should vote on favorite players/youtubers
+About page
+
+
+
+Functional Requirements
+-------------------------------------
+User (name, game user name, age, email, password)
+OSRS-API
+SQLite Database
+player lookup and stat highlighting
+Vote page that list the favorite OSRS players
+Security - secure login and password hashing
+player voting system 
