@@ -1,5 +1,6 @@
+--------------------------------------------------------------------------------
 General Requirements
-------------------------------------
+--------------------------------------------------------------------------------
 Landing page (home page)
 login page
 player comparison page
@@ -11,13 +12,35 @@ Favorite player page - players should vote on favorite players/youtubers
 About page
 
 
-
+--------------------------------------------------------------------------------
 Functional Requirements
--------------------------------------
+--------------------------------------------------------------------------------
 User (name, game user name, age, email, password)
 OSRS-API
 SQLite Database
 player lookup and stat highlighting
 Vote page that list the favorite OSRS players
 Security - secure login and password hashing
-player voting system 
+player voting system
+
+
+--------------------------------------------------------------------------------
+Non-Functional Requirements
+--------------------------------------------------------------------------------
+Database scales to new users
+Database scales to new players to vote
+Voting System is responsive and quick to sort
+Users information should be secure
+User password is hashed and salted
+reCaptcha for non bots 
+
+
+--------------------------------------------------------------------------------
+Interface Requirements
+--------------------------------------------------------------------------------
+Interactive web-interface
+Responsive design for mobile devices
+user player lookup
+user login
+about page
+fixed navigation menu
