@@ -1,5 +1,10 @@
 {% extends 'mainsite/base.html' %}
-{% block title %} Home  {% endblock%}
+{% block title %} Home  {% endblock %}
+{% block head%}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mainsite/CSS/index.css'%}">
+{% endblock %}
+
 {% block body %}
     {% load static %}
     <img src="{% static 'mainsite/pics/banner.png' %}" class="img-responsive img1" alt="Banner">

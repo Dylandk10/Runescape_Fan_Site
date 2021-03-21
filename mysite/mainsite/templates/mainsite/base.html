@@ -7,9 +7,8 @@
 		<meta name="keywords" content="Dylan Kelly, Main Dylan Kelly">
 		<meta name="description" content="Dylan Kelly Home Page">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'mainsite/CSS/index.css'%}"
-    </head>
+		{% block head %} {% endblock %}
+	</head>
         {% include 'mainsite/navbar.html' %}
     <body>
         {% block body %} {% endblock %}
