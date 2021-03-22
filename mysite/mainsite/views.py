@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 
 from .User_handler import User_handler
@@ -14,7 +14,7 @@ def index(request):
 def signup(request):
     return render(request, 'mainsite/signup.html')
 
-def sign_up_user(request):
+def signupuser(request):
     username = request.POST['username']
     password = request.POST['password']
     email = request.POST['email']
@@ -24,24 +24,45 @@ def sign_up_user(request):
     flag = False
     error = None
     #check is username or email is in use
-    if username == User_handler.check_username(username):
+    if User_handler.check_username(username):
         flag = True
-        error = 'username'
-    elif email == User_handler.check_email(email):
+        error = 'Username'
+    elif User_handler.check_email(email):
         flag = True
-        error = 'email'
+        error = 'Email'
+    #make sure fields are not empty
+    elif username == None or password == None or email == None or first_name == None or last_name == None:
+        flag = True
+        error = 'Blank form'
     else:
         User_handler.create_user(username, email, password, first_name, last_name)
         user = User_handler.authenticate_user(username, password)
 
         if user is not None:
-            User_handler.login(request, user)
+            User_handler.login_user(request, user)
 
-    content = {
-        'error_send': error
+    #context for errors
+    context = {
+        'flag': flag,
+        'error': error
     }
 
+    #rendering
     if flag:
-        return render(request, 'mainsite/signup.html', content)
+        return render(request, 'mainsite/signup.html', context)
     else:
         return render(request, 'mainsite/index.html')
+
+def logout_view(request):
+    User_handler.logout_now(request)
+    return render(request, 'mainsite/index.html')
+
+def login_view(request):
+    flag = User_handler.login_now(request)
+    if flag:
+        return render(request, 'mainsite/index.html')
+    else:
+        return render(request, 'mainsite/login.html', {'error': 'Invalid Information'})
+
+def login_page(request):
+    return render(request, 'mainsite/login.html')

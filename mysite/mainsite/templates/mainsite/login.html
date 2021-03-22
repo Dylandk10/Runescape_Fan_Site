@@ -1,0 +1,33 @@
+{% extends 'mainsite/base.html' %}
+{% block title %} Log In  {% endblock %}
+{% block head%}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mainsite/CSS/login.css'%}">
+{% endblock %}
+{% block body %}
+
+<div class="signup-form">
+    <form action="{%url 'login' %}" method="post">{% csrf_token %}
+		<h2>Log In</h2>
+		<p class="hint-text">Log In to gain more Access!</p>
+        {% if error %}
+        <p id="error">{{ error }}</p>
+        {% endif %}
+        <div class="form-group">
+            <input type="username" class="form-control" name="username" placeholder="Username" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+        </div>
+		<div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Log In</button>
+        </div>
+    </form>
+	<div class="text-center">Dont have an Account? Signup!<a href="{%url 'signup' %}">Register</a></div>
+{% endblock%}
+
+{% block footer %}
+    <footer>
+        <p> site is &copyright by Dylan Kelly and Runecape &copyright by Jagax </p>
+    </footer>
+{% endblock %}

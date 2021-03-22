@@ -10,6 +10,9 @@
     <form action="{%url 'signupuser' %}" method="post">{% csrf_token %}
 		<h2>Register</h2>
 		<p class="hint-text">Create your account. It's free and only takes a minute.</p>
+        {% if error %}
+        <p id="error">{{ error }} Taken</p>
+        {% endif %}
         <div class="form-group">
 			<div class="row">
 				<div class="col-xs-6"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
@@ -35,7 +38,7 @@
             <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
         </div>
     </form>
-	<div class="text-center">Already have an account? <a href="#">Sign in</a></div>
+	<div class="text-center">Already have an account? <a href="{%url 'loginpage' %}">Sign in</a></div>
 {% endblock%}
 
 {% block footer %}
