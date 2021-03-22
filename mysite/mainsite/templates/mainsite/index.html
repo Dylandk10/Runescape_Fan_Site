@@ -12,9 +12,10 @@
         <h1>Welcome to DK OSRS</h1>
     </div>
     <hr>
+    <h4>An OSRS Fan Page</h4>
     <div class="container">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md info first">
                 <h3>Welcome</h3>
                 <p>This website was made by Dylan Kelly for the massive multiplayer online game known as
                     Old School Runescape. Runescape was release January 4th, 2001. However Old School Runescape (OSRS) was
@@ -25,7 +26,7 @@
                     game.
                 </p>
             </div>
-            <div class="col-md-5">
+            <div class="col-md info">
                 <h3>Check it Out!</h3>
                 <p>This websites offers great features for current, old and new OSRS players. By clicking the button SEARCH OSRS you can search for
                     in-game items, monsters and players. If you search for a player you can compare two players at a time to see who has better stats, monster kills,
@@ -33,7 +34,7 @@
                     AND IT IS ALL COPYRIGHT BY JAGEX! So get out there and discover the game we love!
                 </p>
             </div>
-            <div class="col-md-5">
+            <div class="col-md info">
                 <h3>Sign up Today!</h3>
                 <p>Join the site to gain access to voting for your favorite in game players! These players can be PVP-streams PVM streams, youtubers or
                     vote for your self! Also, you can save and monitor in game items that you can check the daily changes. So don't wait and join now!
@@ -41,9 +42,12 @@
                     -Dylan Kelly
                 </p>
             </div>
-            <div class="col-md-5">
+            <div class="col-md info last">
                 <h3>Taste Vengeance!</h3>
-                <img src="{% static 'mainsite/pics/KOGIF.gif'%}" alt="KO">
+                <img src="{% static 'mainsite/pics/KOGIF.gif'%}" alt="KO" class="img-responsive koimg">
+                <br>
+                <br>
+                <p>Dylan Kelly</p>
             </div>
         </div>
     </div>
@@ -51,6 +55,6 @@
 
 {% block footer %}
     <footer>
-        <p> site is &copyright by Dylan Kelly and Runecape &copyright by Jagax </p>
+        <p> This site is &copy copyright by Dylan Kelly and Runecape &copy copyright by Jagax </p>
     </footer>
 {% endblock %}

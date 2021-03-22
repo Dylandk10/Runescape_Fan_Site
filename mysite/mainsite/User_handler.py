@@ -25,12 +25,15 @@ class User_handler:
         user = authenticate(username=username_given, password=password_given)
         return user
 
+    #log in
     def login_user(request, user):
         login(request, user)
 
+    #log out
     def logout_now(request):
         logout(request)
 
+    #direct log in 
     def login_now(request):
         username = request.POST['username']
         password = request.POST['password']

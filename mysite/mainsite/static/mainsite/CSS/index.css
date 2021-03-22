@@ -10,8 +10,9 @@
 }
 
 body {
-    background-color: #987554;
+    background-image: url("./../pics/backgroundindex.jpg");
     color: white;
+    font-size: 1.6em;
 }
 .mainContainer {
     padding-right: 5%;
@@ -20,6 +21,42 @@ body {
 h1 {
     font-size: 7em;
     text-align: center;
+    padding: .2em;
+}
+h3 {
+    font-size: 4em;
+    text-align: center;
+    font-family: lucida handwriting;
+}
+
+h4 {
+    text-align: center;
+}
+
+.container {
+    padding-top: 7em;
+}
+
+.info {
+    padding: 4em;
+    background-color: #ebd78d;
+    color: black;
+
+}
+
+.first {
+    border-top: 1px solid balck;
+    border-radius: 18px 18px 0px 0px;
+}
+
+.last {
+    border-bottom: 1px solid balck;
+    border-radius: 0px 0px 18px 18px;
+    text-align: center;
+}
+
+.koimg {
+    display:block;
 }
 
 footer {

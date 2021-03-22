@@ -11,9 +11,11 @@ def index(request):
 #https://docs.djangoproject.com/en/3.1/topics/auth/default/
 #use this to make login and auth
 
+#sign up user page
 def signup(request):
     return render(request, 'mainsite/signup.html')
 
+#sign up user
 def signupuser(request):
     username = request.POST['username']
     password = request.POST['password']
@@ -53,16 +55,23 @@ def signupuser(request):
     else:
         return render(request, 'mainsite/index.html')
 
+#log out function
 def logout_view(request):
     User_handler.logout_now(request)
-    return render(request, 'mainsite/index.html')
+    return render(request, 'mainsite/logingout.html')
 
+#login method to log user in
 def login_view(request):
     flag = User_handler.login_now(request)
     if flag:
-        return render(request, 'mainsite/index.html')
+        return render(request, 'mainsite/loging.html')
     else:
         return render(request, 'mainsite/login.html', {'error': 'Invalid Information'})
 
+#page view for login
 def login_page(request):
     return render(request, 'mainsite/login.html')
+
+#page display for loggin in
+def loging_in_page(request):
+    return render(request, 'mainsite/loging.html')
