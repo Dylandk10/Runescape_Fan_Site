@@ -22,11 +22,22 @@ h1 {
     font-size: 7em;
     text-align: center;
     padding: .2em;
+    background-color: #ebd78d;
+    border: 1px solid black;
+    border-radius: 27px;
+    font-family: lucida handwriting;
+    color: #1b0000;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+
 }
 h3 {
     font-size: 4em;
     text-align: center;
     font-family: lucida handwriting;
+    padding-bottom: 1em;
+    color: #1b0000;
 }
 
 h4 {

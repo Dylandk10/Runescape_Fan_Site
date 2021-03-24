@@ -75,3 +75,6 @@ def login_page(request):
 #page display for loggin in
 def loging_in_page(request):
     return render(request, 'mainsite/loging.html')
+
+def gamebreak(request):
+    return render(request, 'mainsite/gamebreak.html')

@@ -1,0 +1,54 @@
+{% extends 'mainsite/base.html' %}
+{% block title %} Log In  {% endblock %}
+{% block head%}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mainsite/CSS/gamebreak.css'%}">
+{% endblock %}
+{% block body %}
+<!-- Main section of game -->
+     <main>
+       <div id="scores">
+         <p id='killCount'>Enemies Defeated: 0</p>
+         <p id='roundCounter'>Round: 0</p>
+       </div>
+       <br>
+       <br>
+
+       <!-- intro menu -->
+       <div id="gameMenu">
+         <h3 id="rulesAndInstr">Rules and Instructions</h3>
+         <hr>
+         <ol class="list">
+           <li>1. Use arrow keys to move: up, down and side to side (if mobile use buttons)</li><br>
+           <li>2. Use space bar to shoot</li><br>
+           <li>3. kill as many enemies as possible without letting them pass you</li><br>
+           <li>4. The more enemies you kill the more enemies start to spawn</li><br>
+           <li>5. The red square is you, the blue and green squares are enemies!</li><br>
+           <br>
+           <li>GOOD LUCK...</li>
+         </ol>
+         <br>
+         <button id="startGame" type="button" class="btn btn-secondary">Play Now</button>
+       </div>
+
+
+
+       <!-- ending score menu -->
+       <div id="scoreMenu">
+         <h1>Game Over</h1>
+         <hr>
+         <h3 style="text-align:center">Your Score:<span id="yourScore"></span><h3>
+         <button id="playAgainBtn" type="button" class="btn btn-secondary">Play Again</button>
+       </div>
+
+   </main>
+
+    <script src="{% static 'mainsite/JS/gamebreak.js' %}"></script>
+ </body>
+
+{% endblock%}
+{% block footer %}
+    <footer>
+        <p> This Site is &copy copyright by Dylan Kelly and Runecape &copy copyright by Jagax </p>
+    </footer>
+{% endblock %}

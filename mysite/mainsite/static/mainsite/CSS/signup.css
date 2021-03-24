@@ -30,7 +30,7 @@ body {
     content: "";
     height: 2px;
     width: 30%;
-    background: #d4d4d4;
+    /*background: #d4d4d4; */
     position: absolute;
     top: 50%;
     z-index: 2;
@@ -39,7 +39,7 @@ body {
     left: 0;
 }
 .signup-form h2:after{
-    right: 0;
+    right: 1;
 }
 .signup-form .hint-text{
     color: #999;
@@ -91,6 +91,9 @@ body {
     color: red;
 }
 
+h2 {
+    font-family: lucida handwriting;
+}
 footer {
     padding-top: 20em;
 }

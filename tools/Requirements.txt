@@ -3,6 +3,7 @@ General Requirements
 --------------------------------------------------------------------------------
 Landing page (home page)
 login page
+log out page
 player comparison page
     -search a single player
     -search two players and compare
@@ -10,6 +11,8 @@ player comparison page
 Item page- users should be able to search in game items
 Favorite player page - players should vote on favorite players/youtubers
 About page
+Game Break Page 
+Profile Page
 
 
 --------------------------------------------------------------------------------
@@ -22,6 +25,15 @@ player lookup and stat highlighting
 Vote page that list the favorite OSRS players
 Security - secure login and password hashing
 player voting system
+user sign in
+user sign out
+user vote for player 
+user change password
+user look up item
+user look up NPC 
+user look up player
+little game for players to play (game break)
+
 
 
 --------------------------------------------------------------------------------
@@ -44,3 +56,6 @@ user player lookup
 user login
 about page
 fixed navigation menu
+
+
+
