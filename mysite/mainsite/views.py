@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+from django.http import JsonResponse
 
 from .User_handler import User_handler
+from .OSRSAPIHandler import OSRS_API_handler
 # Create your views here.
 
 #home page
@@ -84,4 +86,9 @@ def search_player_view(request):
 
 def search_player_stats(request):
     username = list(request.GET.values())[0]
-    return render(request, 'mainsite/searchplayer.html')
+    if OSRS_API_handler.lookup_player(username):
+        data = OSRS_API_handler.get_player_stats(username)
+        return JsonResponse(data, safe=False)
+    else:
+        data = {}
+        return JsonResponse(data, safe=False)

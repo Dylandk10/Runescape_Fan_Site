@@ -10,7 +10,11 @@ function sendRequest() {
     },
     dataType: 'json',
     success: function (data) {
-        console.log("Ran");
+        if(data && Object.keys(data).length == 0) {
+            console.log("error");
+        } else {
+            console.log(data);
+        }
       }
     });
 }
