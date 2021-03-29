@@ -78,3 +78,10 @@ def loging_in_page(request):
 
 def gamebreak(request):
     return render(request, 'mainsite/gamebreak.html')
+
+def search_player_view(request):
+    return render(request, 'mainsite/searchplayer.html')
+
+def search_player_stats(request):
+    username = list(request.GET.values())[0]
+    return render(request, 'mainsite/searchplayer.html')

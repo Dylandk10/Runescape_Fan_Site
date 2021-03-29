@@ -10,4 +10,6 @@ urlpatterns = [
     path('loginpage', views.login_page, name="loginpage"),
     path('loging', views.loging_in_page, name='loging'),
     path('gamebreak', views.gamebreak, name='gamebreak'),
+    path('searchplayer', views.search_player_view, name='searchplayer'),
+    path('searchplayerstats', views.search_player_stats, name='searchplayerstats')
 ]

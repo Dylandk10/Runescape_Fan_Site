@@ -1,0 +1,145 @@
+{% extends 'mainsite/base.html' %}
+{% block title %} Search Player  {% endblock %}
+{% block head%}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mainsite/CSS/searchplayer.css'%}">
+{% endblock %}
+
+{% block body %}
+    <h1>Search For Player</h1>
+    <div class="col-md">
+        <label for="username">User Name:</label>
+        <input type="text" id="username" name="username">
+        <button id="btnplayer">Search Player</button>
+        <br><br>
+    <table>
+        <tr>
+            <th>Skill</th>
+            <th>Level</th>
+            <th>Rank</th>
+        </tr>
+         <tr>
+             <td>Attack</td>
+             <td>--</td>
+             <td>--</td>
+         </tr>
+         <tr>
+            <td>Strength</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+            <tr>
+                <td>Defence</td>
+                <td>--</td>
+            <td>--</td>
+          </tr>
+            <tr>
+            <td>Range</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+            <tr>
+            <td>Prayer</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+            <tr>
+            <td>Magic</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Runescrafting</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Hitpoints</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Crafting</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Mining</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Smithing</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Fishing</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Cooking</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Firemaking</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Woodcutting</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Agility</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Herblore</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Thieving</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Fletching</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Slayer</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Farming</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Construction</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+        <tr>
+            <td>Hunter</td>
+             <td>--</td>
+            <td>--</td>
+         </tr>
+    </table>
+    </div>
+    {%load static%}
+    <script src="{% static 'mainsite/JS/searchplayer.js' %}"></script>
+{% endblock %}
+{% block footer %}
+    <footer>
+        <p> This site is &copy copyright by Dylan Kelly and Runecape &copy copyright by Jagax </p>
+    </footer>
+{% endblock %}
