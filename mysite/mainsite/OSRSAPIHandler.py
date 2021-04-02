@@ -1,4 +1,6 @@
 from osrs_api import Hiscores
+from osrs_api import GrandExchange
+from osrs_api import Item
 
 class OSRS_API_handler:
 
@@ -121,4 +123,32 @@ class OSRS_API_handler:
             'hunt_lvl': hunt_lvl,
             'hunt_rank': hunt_rank,
         }
+        return data
+
+    #get the id of the item
+    def get_item_id(name):
+        try:
+            item_id = Item.get_ids(name)
+        except:
+            item_id = None
+
+        return item_id
+
+    def get_item(id, name):
+        try:
+            item = GrandExchange.item(id)
+        except:
+            item = None
+
+        print(item)
+        if item:
+            data = {
+                'name': name,
+                'price': item.price(),
+                'des': item.description,
+                'mem': item.is_mem
+                }
+        else:
+            data = {}
+
         return data

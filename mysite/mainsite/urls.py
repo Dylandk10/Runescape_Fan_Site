@@ -11,5 +11,7 @@ urlpatterns = [
     path('loging', views.loging_in_page, name='loging'),
     path('gamebreak', views.gamebreak, name='gamebreak'),
     path('searchplayer', views.search_player_view, name='searchplayer'),
-    path('searchplayerstats', views.search_player_stats, name='searchplayerstats')
+    path('searchplayerstats', views.search_player_stats, name='searchplayerstats'),
+    path('searchitemview', views.search_item_view, name="searchitemview"),
+    path('searchitem', views.search_for_item, name='searchitem'),
 ]

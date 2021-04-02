@@ -83,10 +83,10 @@ function displayData(obj) {
     document.getElementById("huntrank").innerHTML = obj.hunt_rank;
 }
 
-//reset table 
+//reset table
 function resetTable() {
     document.getElementById("attlvl").innerHTML = "--";
-    document.getElementById("attrank").innerHTML = "--"''
+    document.getElementById("attrank").innerHTML = "--";
     document.getElementById("strlvl").innerHTML = "--";
     document.getElementById("strrank").innerHTML = "--";
     document.getElementById("deflvl").innerHTML = "--";

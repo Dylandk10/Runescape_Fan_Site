@@ -92,3 +92,14 @@ def search_player_stats(request):
     else:
         data = {}
         return JsonResponse(data, safe=False)
+
+#render page for search item
+def search_item_view(request):
+    return render(request, 'mainsite/searchItem.html')
+
+
+def search_for_item(request):
+    itemsearch = list(request.GET.values())[0]
+    item_id = OSRS_API_handler.get_item_id(itemsearch)
+    data = OSRS_API_handler.get_item(item_id, itemsearch)
+    return JsonResponse(data, safe=False)

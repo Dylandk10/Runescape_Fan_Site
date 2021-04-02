@@ -1,0 +1,41 @@
+{% extends 'mainsite/base.html' %}
+{% block title %} Search Item  {% endblock %}
+{% block head%}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mainsite/CSS/searchItem.css'%}">
+{% endblock %}
+
+{% block body %}
+    <h1>Search For Item</h1>
+    <div class="col-md mainC">
+        <p>Enter the Name of a Item to search the OSRS API </p>
+        <label for="item">Item Name:</label>
+        <input type="text" id="item" name="item" required>
+        <button id="btnItem">Search Item</button>
+        <br><br>
+        <span id="errorItem"></span>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>description</th>
+                <th>Members</th>
+            </tr>
+            <tr>
+                <td id="itemname">--</td>
+                <td id="itemprice">--</td>
+                <td id="itemdes">--</td>
+                <td id="itemmem">--</td>
+            </tr>
+        </table>
+
+    </div>
+    {%load static%}
+    <script src="{% static 'mainsite/JS/searchItem.js' %}"></script>
+{% endblock %}
+{% block footer %}
+    <footer>
+        <p> This site is &copy copyright by Dylan Kelly and Runecape &copy copyright by Jagax </p>
+    </footer>
+{% endblock %}
