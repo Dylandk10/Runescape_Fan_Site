@@ -140,7 +140,6 @@ class OSRS_API_handler:
         except:
             item = None
 
-        print(item)
         if item:
             data = {
                 'name': name,

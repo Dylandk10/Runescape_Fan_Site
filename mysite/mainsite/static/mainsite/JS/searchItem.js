@@ -34,7 +34,7 @@ function sendRequest() {
 //set the table with object
 function setTable(obj) {
     document.getElementById('itemname').innerHTML = obj.name;
-    document.getElementById('itemprice').innerHTML = obj.price.toString();
+    document.getElementById('itemprice').innerHTML = obj.price.toString() + " GP";
     document.getElementById('itemdes').innerHTML = obj.des;
     document.getElementById('itemmem').innerHTML = obj.mem.toString();
 

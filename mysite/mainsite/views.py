@@ -78,12 +78,15 @@ def login_page(request):
 def loging_in_page(request):
     return render(request, 'mainsite/loging.html')
 
+#render game break page 
 def gamebreak(request):
     return render(request, 'mainsite/gamebreak.html')
 
+#render the search player page
 def search_player_view(request):
     return render(request, 'mainsite/searchplayer.html')
 
+#search osrs api for player stats
 def search_player_stats(request):
     username = list(request.GET.values())[0]
     if OSRS_API_handler.lookup_player(username):
@@ -98,6 +101,7 @@ def search_item_view(request):
     return render(request, 'mainsite/searchItem.html')
 
 
+#get request to search osrs api for items
 def search_for_item(request):
     itemsearch = list(request.GET.values())[0]
     item_id = OSRS_API_handler.get_item_id(itemsearch)
