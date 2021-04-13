@@ -151,3 +151,23 @@ class OSRS_API_handler:
             data = {}
 
         return data
+
+
+    #fucntion for running osrs api test
+    #@param string
+    def DEBUG_get_player(name):
+        try:
+            user = Hiscores(name)
+        except:
+            user = None
+        return user
+
+    #@param id Integer
+    def DEBUG_get_item(id):
+        try:
+            item = GrandExchange.item(id)
+            result = True
+        except:
+            item_id = None
+            result = False
+        return result
