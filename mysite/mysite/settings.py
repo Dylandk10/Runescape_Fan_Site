@@ -25,7 +25,7 @@ SECRET_KEY = 'i*cp6uzd^palh-=4q46ykn+5har7q%fl=t@mouvyh0%)754@ty'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['quiet-taiga-56724.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
