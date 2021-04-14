@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'i*cp6uzd^palh-=4q46ykn+5har7q%fl=t@mouvyh0%)754@ty'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['quiet-taiga-56724.herokuapp.com', '127.0.0.1']
 
@@ -32,7 +32,6 @@ ALLOWED_HOSTS = ['quiet-taiga-56724.herokuapp.com', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    #'whitenoise.runserver_nostatic',
     'mainsite',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,7 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -129,4 +128,4 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "mainsite/static"),
 )
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
