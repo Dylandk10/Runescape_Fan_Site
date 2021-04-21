@@ -14,4 +14,7 @@ urlpatterns = [
     path('searchplayerstats', views.search_player_stats, name='searchplayerstats'),
     path('searchitemview', views.search_item_view, name="searchitemview"),
     path('searchitem', views.search_for_item, name='searchitem'),
+    path('voteForPlayer', views.vote_for_player, name='voteForPlayer'),
+    path('addvote', views.add_vote, name='addvote'),
+    path('addplayertovotetable', views.add_player_to_vote_for, name='addplayertovotetable'),
 ]

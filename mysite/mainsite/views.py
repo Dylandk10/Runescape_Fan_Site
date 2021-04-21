@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 
 from .User_handler import User_handler
 from .OSRSAPIHandler import OSRS_API_handler
+from .playerVoteHandler import playerVoteHandler
 # Create your views here.
 
 #home page
@@ -78,7 +79,7 @@ def login_page(request):
 def loging_in_page(request):
     return render(request, 'mainsite/loging.html')
 
-#render game break page 
+#render game break page
 def gamebreak(request):
     return render(request, 'mainsite/gamebreak.html')
 
@@ -107,3 +108,40 @@ def search_for_item(request):
     item_id = OSRS_API_handler.get_item_id(itemsearch)
     data = OSRS_API_handler.get_item(item_id, itemsearch)
     return JsonResponse(data, safe=False)
+
+#vote for player page
+def vote_for_player(request):
+    data = {
+        'player': list(playerVoteHandler.get_all_players())
+    }
+    return render(request, 'mainsite/voteForPlayer.html', data)
+
+#add vote to a player
+def add_vote(request):
+    name = list(request.GET.values())[0]
+    username = None
+    error = None
+    if request.user.is_authenticated:
+        username = request.user.username
+        if not User_handler.has_user_voted(username):
+            playerVoteHandler.add_vote_to_player(name)
+        else :
+            error = "you have already voted"
+    else:
+        error = "please sign in"
+
+    data = {
+        "error": error
+    }
+    return JsonResponse(data, safe=False)
+
+#add playr to vote for to database
+def add_player_to_vote_for(request):
+    name = request.POST['username']
+    description = request.POST['description']
+
+    if request.user.is_authenticated:
+        result = playerVoteHandler.create_player(name, description)
+        return render(request, 'mainsite/voteForPlayer.html')
+    else:
+        return render(request, 'mainsite/signup.html')

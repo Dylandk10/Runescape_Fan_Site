@@ -48,3 +48,10 @@ class User_handler:
             login(request, user)
             flag = True
         return flag
+
+    def has_user_voted(username):
+        player = PlayerVoted.objects.get(username=username)
+        if player.voted == True:
+            return True
+        else:
+            return False
