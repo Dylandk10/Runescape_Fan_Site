@@ -125,6 +125,7 @@ def add_vote(request):
         username = request.user.username
         if not User_handler.has_user_voted(username):
             playerVoteHandler.add_vote_to_player(name)
+            playerVoteHandler.player_voted(username)
         else :
             error = "you have already voted"
     else:
@@ -142,6 +143,9 @@ def add_player_to_vote_for(request):
 
     if request.user.is_authenticated:
         result = playerVoteHandler.create_player(name, description)
-        return render(request, 'mainsite/voteForPlayer.html')
+        data = {
+            'player': list(playerVoteHandler.get_all_players())
+        }
+        return render(request, 'mainsite/voteForPlayer.html', data)
     else:
         return render(request, 'mainsite/signup.html')
