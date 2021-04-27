@@ -149,3 +149,12 @@ def add_player_to_vote_for(request):
         return render(request, 'mainsite/voteForPlayer.html', data)
     else:
         return render(request, 'mainsite/signup.html')
+
+#delete user
+
+def delete_user(request):
+    if request.user.is_authenticated:
+        username = request.user.username
+        User_handler.logout_now(request)
+        User_handler.delete_user(username)
+    return render(request, 'mainsite/index.html')

@@ -55,3 +55,7 @@ class User_handler:
             return True
         else:
             return False
+
+    def delete_user(username):
+        user = User.objects.get(username=username)
+        user.delete() 

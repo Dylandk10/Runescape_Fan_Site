@@ -31,6 +31,7 @@
     <div id="addPlayer">
         <form action="{%url 'addplayertovotetable' %}" method="post">{% csrf_token %}
             <h3>Add Player</h3>
+            <h5>You must have an account to add a user</h5>
             <div class="form-group">
                 <input type="username" class="form-control" name="username" placeholder="Username" required="required">
             </div>

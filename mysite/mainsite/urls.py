@@ -17,4 +17,5 @@ urlpatterns = [
     path('voteForPlayer', views.vote_for_player, name='voteForPlayer'),
     path('addvote', views.add_vote, name='addvote'),
     path('addplayertovotetable', views.add_player_to_vote_for, name='addplayertovotetable'),
+    path('deleteuser', views.delete_user, name='deleteuser'),
 ]
