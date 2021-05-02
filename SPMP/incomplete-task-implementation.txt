@@ -1,0 +1,27 @@
+Vote System - add player
+	connect vote handler to osrs handler 
+	use osrs handler to check the player exist
+	if player exist countinue else return player not found exception 
+	use vote handler to make sure the user is not already listed 
+
+reCAPTCHA
+	Add recapta validation to backend user handler
+	when user handler passes all validations check with the reCAPTCHA 
+	return true or false depending on reCAPTCHA 
+
+NPC Search 
+	OSRS does not provide API for NPC Search
+	scrap Runewiki or a RSPS for NPC data
+	store in a JSON file
+	user enters name of NPC
+	ajax request is sent to back end
+	views.py parses the request 
+	OSRS API searches JSON file 
+	if NPC found turn NPC else return npc not found excpetion 
+
+game break add highscore 
+	while playing the game keep the user highscore and store in SQLite database
+	send ajax request with users score
+	view.py parses the ajax 
+	user handler checks to see if the new score is greater than the old score
+	if score is great overwrite score with new highscore return new highscore popup else return redict game break page
